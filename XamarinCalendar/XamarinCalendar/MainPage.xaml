@@ -4,8 +4,18 @@
              x:Class="XamarinCalendar.MainPage">
 
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#1f1f1f">
-            <Frame HasShadow="False" BackgroundColor="#1f1f1f" Padding="0">
+        <Grid BackgroundColor="#1f1f1f">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" HasShadow="False" BackgroundColor="#1f1f1f" Padding="0">
                 <StackLayout>
                     <Label x:Name="Hour"
                            Text="hh:mm:ss" TextColor="White"
@@ -18,18 +28,24 @@
                 </StackLayout>
             </Frame>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="MMMM/yyyy" Margin="20, 0" TextColor="#cdcdcd"/>
+            <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="0, 105, 0, 0" >
+                <Label  x:Name="MonthAndYear"
+                        Text="MMMM/yyyy" Margin="20, 0" TextColor="#cdcdcd" />
                 <Button Text="▲" BackgroundColor="#1f1f1f" TextColor="#cdcdcd"
-                        HeightRequest="10" WidthRequest="20" Padding="0"
-                        HorizontalOptions="EndAndExpand"
+                        HeightRequest="20" WidthRequest="20" Padding="0"
+                        HorizontalOptions="EndAndExpand" VerticalOptions="Start"
                         Margin="0, 0, 25, 0"/>
                 <Button Text="▼" BackgroundColor="#1f1f1f" TextColor="#cdcdcd"
-                        HeightRequest="10" WidthRequest="20" Padding="0"
+                        HeightRequest="20" WidthRequest="20" Padding="0"
+                        VerticalOptions="Start"
                         Margin="0, 0, 35, 0"/>
             </StackLayout>
 
-            <Grid Padding=" 20">
+
+            <!--===========================  WEEK DAYS  ==================================
+             ========================================================================== -->
+            
+            <Grid Grid.Row="1" Margin="0, -10, 0, 125" Padding="20, 0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -42,214 +58,472 @@
 
                 <Grid.RowDefinitions>
                     <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <!--===========================  WEEK DAYS  ==================================
-                ========================================================================== -->
-                
                 <Label Text="D" Grid.Column="0" Grid.Row="0"
-                       TextColor="White" BackgroundColor="#1f1f1f"
-                       Margin="15, 0, 0, 0"/>
+                           TextColor="White" BackgroundColor="#1f1f1f"
+                           Margin="15, 0, 0, 0"/>
                 <Label Text="S" Grid.Column="1" Grid.Row="0"
-                       TextColor="White" BackgroundColor="#1f1f1f"
-                       Margin="15, 0, 0, 0"/>
+                           TextColor="White" BackgroundColor="#1f1f1f"
+                           Margin="15, 0, 0, 0"/>
                 <Label Text="T" Grid.Column="2" Grid.Row="0"
-                       TextColor="White" BackgroundColor="#1f1f1f"
-                       Margin="15, 0, 0, 0"/>
+                           TextColor="White" BackgroundColor="#1f1f1f"
+                           Margin="15, 0, 0, 0"/>
                 <Label Text="Q" Grid.Column="3" Grid.Row="0"
-                       TextColor="White" BackgroundColor="#1f1f1f"
-                       Margin="15, 0, 0, 0"/>
+                           TextColor="White" BackgroundColor="#1f1f1f"
+                           Margin="15, 0, 0, 0"/>
                 <Label Text="Q" Grid.Column="4" Grid.Row="0"
-                       TextColor="White" BackgroundColor="#1f1f1f"
-                       Margin="15, 0, 0, 0"/>
+                           TextColor="White" BackgroundColor="#1f1f1f"
+                           Margin="15, 0, 0, 0"/>
                 <Label Text="S" Grid.Column="5" Grid.Row="0"
-                       TextColor="White" BackgroundColor="#1f1f1f"
-                       Margin="15, 0, 0, 0"/>
+                           TextColor="White" BackgroundColor="#1f1f1f"
+                           Margin="15, 0, 0, 0"/>
                 <Label Text="S" Grid.Column="6" Grid.Row="0"
-                       TextColor="White" BackgroundColor="#1f1f1f"
-                       Margin="15, 0, 0, 0"/>
-                
-                <!--==========================  MONTH DAYS  ==================================
-                ================================== ROW 1 ================================= -->
-
-                <Button Text="dd" Grid.Column="0" Grid.Row="1" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="1" Grid.Row="1" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="2" Grid.Row="1" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="3" Grid.Row="1" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="4" Grid.Row="1" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="5" Grid.Row="1" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="6" Grid.Row="1" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-
-                <!--==========================================================================
-                ================================== ROW 2 ================================= -->
-
-                <Button Text="dd" Grid.Column="0" Grid.Row="2" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="1" Grid.Row="2" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="2" Grid.Row="2" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="3" Grid.Row="2" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="4" Grid.Row="2" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="5" Grid.Row="2" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="6" Grid.Row="2" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-
-                <!--==========================================================================
-                ================================== ROW 3 ================================= -->
-
-                <Button Text="dd" Grid.Column="0" Grid.Row="3" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="1" Grid.Row="3" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="2" Grid.Row="3" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="3" Grid.Row="3" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="4" Grid.Row="3" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="5" Grid.Row="3" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="6" Grid.Row="3" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-
-                <!--==========================================================================
-                ================================== ROW 4 ================================= -->
-
-                <Button Text="dd" Grid.Column="0" Grid.Row="4" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="1" Grid.Row="4" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="2" Grid.Row="4" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="3" Grid.Row="4" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="4" Grid.Row="4" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="5" Grid.Row="4" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="6" Grid.Row="4" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-
-                <!--==========================================================================
-                ================================== ROW 5 ================================= -->
-
-                <Button Text="dd" Grid.Column="0" Grid.Row="5" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="1" Grid.Row="5" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="2" Grid.Row="5" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="3" Grid.Row="5" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="4" Grid.Row="5" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="5" Grid.Row="5" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="6" Grid.Row="5" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-
-                <!--==========================================================================
-                ================================== ROW 6 ================================= -->
-
-                <Button Text="dd" Grid.Column="0" Grid.Row="6" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="1" Grid.Row="6" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="2" Grid.Row="6" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="3" Grid.Row="6" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="4" Grid.Row="6" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="5" Grid.Row="6" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="6" Grid.Row="6" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-
-                <!--==========================================================================
-                ================================== ROW 2 ================================= -->
-
-                <Button Text="dd" Grid.Column="0" Grid.Row="7" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="1" Grid.Row="7" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="2" Grid.Row="7" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="3" Grid.Row="7" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="4" Grid.Row="7" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="5" Grid.Row="7" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
-                <Button Text="dd" Grid.Column="6" Grid.Row="7" Padding="0"
-                        HeightRequest="25" 
-                        TextColor="White" BackgroundColor="#1f1f1f" />
+                           TextColor="White" BackgroundColor="#1f1f1f"
+                           Margin="15, 0, 0, 0"/>
             </Grid>
-        </StackLayout>
+
+            <ScrollView Grid.Row="2" Margin="0, -130, 0, 80"
+                        Orientation="Vertical" VerticalScrollBarVisibility="Never" >
+                <Grid Padding="20, 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        
+                    </Grid.RowDefinitions>
+
+                    <!--==========================  MONTH DAYS  ==================================
+                        ================================== ROW 1 =====================================
+                        =============================== LAST MONTH ================================-->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="0" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="0" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="0" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="0" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="0" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="0" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="0" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================== ROW 2 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="1" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="1" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="1" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="1" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="1" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="1" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="1" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================== ROW 3 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="2" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="2" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="2" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="2" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="2" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="2" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="2" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================== ROW 4 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="3" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="3" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="3" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="3" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="3" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="3" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="3" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================== ROW 5 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="4" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="4" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="4" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="4" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="4" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="4" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="4" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================== ROW 6 =====================================
+                        ============================== ACTUAL MONTH ===============================-->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="5" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="5" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="5" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="5" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="5" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="5" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="5" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================== ROW 7 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="6" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="6" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="6" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="6" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="6" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="6" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="6" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================== ROW 8 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="7" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="7" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="7" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="7" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="7" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="7" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="7" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================== ROW 9 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="8" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="8" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="8" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="8" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="8" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="8" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="8" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================= ROW 10 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="9" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="9" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="9" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="9" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="9" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="9" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="9" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================= ROW 11 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="10" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="10" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="10" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="10" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="10" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="10" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="10" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================= ROW 12 =====================================
+                        ============================== ACTUAL MONTH ===============================-->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="11" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="11" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="11" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="11" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="11" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="11" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="11" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================= ROW 13 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="12" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="12" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="12" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="12" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="12" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="12" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="12" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================= ROW 14 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="13" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="13" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="13" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="13" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="13" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="13" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="13" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================= ROW 15 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="14" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="14" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="14" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="14" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="14" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="14" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="14" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                    <!--==========================================================================
+                        ================================= ROW 16 ================================= -->
+
+                    <Button Text="dd" Grid.Column="0" Grid.Row="15" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="1" Grid.Row="15" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="2" Grid.Row="15" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="3" Grid.Row="15" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="4" Grid.Row="15" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="5" Grid.Row="15" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+                    <Button Text="dd" Grid.Column="6" Grid.Row="15" Padding="0"
+                                HeightRequest="25" 
+                                TextColor="White" BackgroundColor="#1f1f1f" />
+
+                </Grid>
+            </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
