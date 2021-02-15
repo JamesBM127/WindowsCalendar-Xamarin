@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinCalendar.UWP", "Xama
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinCalendar.Android", "XamarinCalendar\XamarinCalendar.Android\XamarinCalendar.Android.csproj", "{60AA1289-3E69-464D-8DEB-45342CAD9FE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinCalendar", "XamarinCalendar\XamarinCalendar\XamarinCalendar.csproj", "{B1D04EAD-F464-4D14-9FB4-58BE3EF176A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinCalendar", "XamarinCalendar\XamarinCalendar\XamarinCalendar.csproj", "{B1D04EAD-F464-4D14-9FB4-58BE3EF176A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
