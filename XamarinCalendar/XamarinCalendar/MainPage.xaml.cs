@@ -18,14 +18,17 @@ namespace XamarinCalendar
         private void SetText()
         {
             //Date date = new Date(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
-            Date date = new Date(23, 1, 2021);
-            string dateString = 
+            Date date = new Date(23, 2, 2021);
+            
+            /*
+            string dateString =
                 date.Day.ToString() + "/" +
                 date.Month.ToString() + "/" +
                 date.Year.ToString();
+            */
 
             MonthAndYear.Text = date.ToShow.ToString("MMMM") + " de " + date.ToShow.ToString("yyyy");
-            
+
             CalendarInterface cInterface = new CalendarInterface(date);
 
             int a = 1;
@@ -33,37 +36,36 @@ namespace XamarinCalendar
 
             //d00 = day[0,0] // d01 = day[0,1] ... in an multi vector
 
-            if (start <= 6)
+            int lastDayOfMonth = DateTime.DaysInMonth(date.Year, date.Month);
+
+            if (start >= 0)
             {
-                if (start >= 0)
+                
+                a--;
+                if (start >= 1)
                 {
-                    d00.Text = " ";
+                    
                     a--;
-                    if (start >= 1)
+                    if (start >= 2)
                     {
-                        d01.Text = " ";
+                        
                         a--;
-                        if (start >= 2)
+                        if (start >= 3)
                         {
-                            d02.Text = " ";
+                            
                             a--;
-                            if (start >= 3)
+                            if (start >= 4)
                             {
-                                d03.Text = " ";
+                                
                                 a--;
-                                if (start >= 4)
+                                if (start >= 5)
                                 {
-                                    d04.Text = " ";
+                                    
                                     a--;
-                                    if (start >= 5)
+                                    if (start == 6)
                                     {
-                                        d05.Text = " ";
+                                        
                                         a--;
-                                        if (start == 6)
-                                        {
-                                            d06.Text = " ";
-                                            a--;
-                                        }
                                     }
                                 }
                             }
@@ -71,6 +73,7 @@ namespace XamarinCalendar
                     }
                 }
             }
+
 
             d00.Text = a++.ToString();
             d01.Text = a++.ToString();
@@ -104,15 +107,24 @@ namespace XamarinCalendar
             d35.Text = a++.ToString();
             d36.Text = a++.ToString();
 
+            if (lastDayOfMonth < a) a = 1;
             d40.Text = a++.ToString();
+            if (lastDayOfMonth < a) a = 1;
             d41.Text = a++.ToString();
+            if (lastDayOfMonth < a) a = 1;
             d42.Text = a++.ToString();
+            if (lastDayOfMonth < a) a = 1;
             d43.Text = a++.ToString();
+            if (lastDayOfMonth < a) a = 1;
             d44.Text = a++.ToString();
+            if (lastDayOfMonth < a) a = 1;
             d45.Text = a++.ToString();
+            if (lastDayOfMonth < a) a = 1;
             d46.Text = a++.ToString();
 
+            if (lastDayOfMonth < a) a = 1;
             d50.Text = a++.ToString();
+            if (lastDayOfMonth < a) a = 1;
             d51.Text = a++.ToString();
             d52.Text = a++.ToString();
             d53.Text = a++.ToString();
@@ -129,7 +141,7 @@ namespace XamarinCalendar
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 this.Date = DateTime.Now;
-                
+
                 Hour.Text = Date.ToString("HH:mm:ss");
                 DayOfTheWeek.Text = Date.DayOfWeek + ", " + Date.ToString("dd") + " de " + Date.ToString("MMMM") + " de " + Date.ToString("yyyy");
 
@@ -150,12 +162,12 @@ namespace XamarinCalendar
 
         private void Btn_GoToLastMonth(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Btn_GoToNextMonth(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
