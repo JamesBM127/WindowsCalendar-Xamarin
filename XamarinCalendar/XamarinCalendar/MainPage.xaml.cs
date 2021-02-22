@@ -13,12 +13,12 @@ namespace XamarinCalendar
     public partial class MainPage : ContentPage
     {
         public DateTime Date { get; set; }
+        Date date;
 
-
-        private void SetText()
+        private void SetText(int day, int month, int year)
         {
             //Date date = new Date(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
-            Date date = new Date(23, 2, 2021);
+            date = new Date(day, month, year);
             
             /*
             string dateString =
@@ -156,18 +156,32 @@ namespace XamarinCalendar
             CultureInfo.CurrentCulture = new CultureInfo("pt-BR", false);
 
             TodayFunc();
-            SetText();
+            SetText(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
 
         }
 
         private void Btn_GoToLastMonth(object sender, EventArgs e)
         {
-
+            if(DateTime.Now.Month == 1)
+            {
+                SetText(date.Day, 12, date.Year - 1);
+            }
+            else
+            {
+                SetText(date.Day, date.Month - 1, date.Year);
+            }
         }
 
         private void Btn_GoToNextMonth(object sender, EventArgs e)
         {
-
+            if (DateTime.Now.Month == 12)
+            {
+                SetText(date.Day, 1, date.Year + 1);
+            }
+            else
+            {
+                SetText(date.Day, date.Month + 1, date.Year);
+            }
         }
     }
 }
