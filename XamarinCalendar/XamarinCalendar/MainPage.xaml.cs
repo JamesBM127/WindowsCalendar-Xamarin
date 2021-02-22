@@ -162,7 +162,7 @@ namespace XamarinCalendar
 
         private void Btn_GoToLastMonth(object sender, EventArgs e)
         {
-            if(DateTime.Now.Month == 1)
+            if(date.Month == 1)
             {
                 SetText(date.Day, 12, date.Year - 1);
             }
@@ -174,7 +174,7 @@ namespace XamarinCalendar
 
         private void Btn_GoToNextMonth(object sender, EventArgs e)
         {
-            if (DateTime.Now.Month == 12)
+            if (date.Month == 12)
             {
                 SetText(date.Day, 1, date.Year + 1);
             }
