@@ -32,39 +32,39 @@ namespace XamarinCalendar
             CalendarInterface cInterface = new CalendarInterface(date);
 
             int a = 1;
-            int start = cInterface.DaysInterfaceConfiguration() - 1;
+            int start = cInterface.DaysInterfaceConfiguration();
 
             //d00 = day[0,0] // d01 = day[0,1] ... in an multi vector
 
             int lastDayOfMonth = DateTime.DaysInMonth(date.Year, date.Month);
 
+            int lastMonthDays = 0;
+            if (date.Month == 1)
+                lastMonthDays = DateTime.DaysInMonth(date.Year - 1, 12);
+            else
+                lastMonthDays = DateTime.DaysInMonth(date.Year, date.Month - 1);
+
+            a = lastMonthDays + 1;
             if (start >= 0)
             {
-                
                 a--;
                 if (start >= 1)
-                {
-                    
+                {    
                     a--;
                     if (start >= 2)
-                    {
-                        
+                    {       
                         a--;
                         if (start >= 3)
-                        {
-                            
+                        {       
                             a--;
                             if (start >= 4)
-                            {
-                                
+                            {       
                                 a--;
                                 if (start >= 5)
-                                {
-                                    
+                                {       
                                     a--;
                                     if (start == 6)
-                                    {
-                                        
+                                    {       
                                         a--;
                                     }
                                 }
@@ -73,14 +73,50 @@ namespace XamarinCalendar
                     }
                 }
             }
-
-
+            
+            if (lastMonthDays < a) a = 1;
+            if (a > 20)
+                d00.TextColor = Color.FromHex("#727272");
+            else
+                d00.TextColor = Color.FromHex("#FFFFFF");
             d00.Text = a++.ToString();
+
+            if (lastMonthDays < a) a = 1;
+            if (a > 20)
+                d01.TextColor = Color.FromHex("#727272");
+            else
+                d01.TextColor = Color.FromHex("#FFFFFF");
             d01.Text = a++.ToString();
+
+            if (lastMonthDays < a) a = 1;
+            if (a > 20)
+                d02.TextColor = Color.FromHex("#727272");
+            else
+                d02.TextColor = Color.FromHex("#FFFFFF");
             d02.Text = a++.ToString();
+
+            if (lastMonthDays < a) a = 1;
+            if (a > 20)
+                d03.TextColor = Color.FromHex("#727272");
+            else
+                d03.TextColor = Color.FromHex("#FFFFFF");
             d03.Text = a++.ToString();
+
+            if (lastMonthDays < a) a = 1;
+            if (a > 20)
+                d04.TextColor = Color.FromHex("#727272");
+            else
+                d04.TextColor = Color.FromHex("#FFFFFF");
             d04.Text = a++.ToString();
+
+            if (lastMonthDays < a) a = 1;
+            if (a > 20)
+                d05.TextColor = Color.FromHex("#727272");
+            else
+                d05.TextColor = Color.FromHex("#FFFFFF");
             d05.Text = a++.ToString();
+
+            if (lastMonthDays < a) a = 1;
             d06.Text = a++.ToString();
 
             d10.Text = a++.ToString();
@@ -108,24 +144,70 @@ namespace XamarinCalendar
             d36.Text = a++.ToString();
 
             if (lastDayOfMonth < a) a = 1;
+            if (a < 20)
+                d40.TextColor = Color.FromHex("#727272");
+            else
+                d40.TextColor = Color.FromHex("#FFFFFF");
             d40.Text = a++.ToString();
-            if (lastDayOfMonth < a) a = 1;
-            d41.Text = a++.ToString();
-            if (lastDayOfMonth < a) a = 1;
-            d42.Text = a++.ToString();
-            if (lastDayOfMonth < a) a = 1;
-            d43.Text = a++.ToString();
-            if (lastDayOfMonth < a) a = 1;
-            d44.Text = a++.ToString();
-            if (lastDayOfMonth < a) a = 1;
-            d45.Text = a++.ToString();
-            if (lastDayOfMonth < a) a = 1;
-            d46.Text = a++.ToString();
 
             if (lastDayOfMonth < a) a = 1;
-            d50.Text = a++.ToString();
+            if (a < 20)
+                d41.TextColor = Color.FromHex("#727272");
+            else
+                d41.TextColor = Color.FromHex("#FFFFFF");
+            d41.Text = a++.ToString();
+
             if (lastDayOfMonth < a) a = 1;
+            if (a < 20)
+                d42.TextColor = Color.FromHex("#727272");
+            else
+                d42.TextColor = Color.FromHex("#FFFFFF");
+            d42.Text = a++.ToString();
+
+            if (lastDayOfMonth < a) a = 1;
+            if (a < 20)
+                d43.TextColor = Color.FromHex("#727272");
+            else
+                d43.TextColor = Color.FromHex("#FFFFFF");
+            d43.Text = a++.ToString();
+            if (lastDayOfMonth < a) a = 1;
+            if (a < 20)
+                d44.TextColor = Color.FromHex("#727272");
+            else
+                d44.TextColor = Color.FromHex("#FFFFFF");
+            d44.Text = a++.ToString();
+
+            if (lastDayOfMonth < a) a = 1;
+            if (a < 20)
+                d45.TextColor = Color.FromHex("#727272");
+            else
+                d45.TextColor = Color.FromHex("#FFFFFF");
+            d45.Text = a++.ToString();
+
+            if (lastDayOfMonth < a) a = 1;
+            if (a < 20)
+                d46.TextColor = Color.FromHex("#727272");
+            else
+                d46.TextColor = Color.FromHex("#FFFFFF");
+            d46.Text = a++.ToString();
+
+            //======================================================================//
+
+            if (lastDayOfMonth < a) a = 1;
+            if (a < 20)
+                d50.TextColor = Color.FromHex("#727272");
+            else
+                d50.TextColor = Color.FromHex("#FFFFFF");
+            d50.Text = a++.ToString();
+
+            if (lastDayOfMonth < a) a = 1;
+            if (a < 20)
+                d51.TextColor = Color.FromHex("#727272");
+            else
+                d51.TextColor = Color.FromHex("#FFFFFF");
             d51.Text = a++.ToString();
+
+            if (lastDayOfMonth < a) a = 1;
             d52.Text = a++.ToString();
             d53.Text = a++.ToString();
             d54.Text = a++.ToString();

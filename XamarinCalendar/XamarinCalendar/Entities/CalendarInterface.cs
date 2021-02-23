@@ -24,19 +24,19 @@ namespace XamarinCalendar.Entities
         {
             switch (FirstDayOfMonth())
             {
-                case "sunday": return 0;
+                case "sunday": return -1;
 
-                case "monday": return 1;
+                case "monday": return 0;
 
-                case "tuesday": return 2;
+                case "tuesday": return 1;
 
-                case "wednesday": return 3;
+                case "wednesday": return 2;
 
-                case "thursday": return 4;
+                case "thursday": return 3;
 
-                case "friday": return 5;
+                case "friday": return 4;
 
-                case "saturday": return 6;
+                case "saturday": return 5;
             }
             return 0;
         }

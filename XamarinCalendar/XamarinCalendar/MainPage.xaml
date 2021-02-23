@@ -4,18 +4,8 @@
              x:Class="XamarinCalendar.MainPage">
 
     <ContentPage.Content>
-        <Grid BackgroundColor="#1f1f1f">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-
-            <Frame Grid.Row="0" HasShadow="False" BackgroundColor="#1f1f1f" Padding="0">
+        <AbsoluteLayout BackgroundColor="#1f1f1f">
+            <Frame HasShadow="False" BackgroundColor="#1f1f1f" Padding="0">
                 <StackLayout>
                     <Label x:Name="Hour"
                            Text="hh:mm:ss" TextColor="White"
@@ -28,7 +18,7 @@
                 </StackLayout>
             </Frame>
 
-            <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="0, 105, 0, 0" >
+            <StackLayout Orientation="Horizontal" Margin="0, 105, 0, 0" >
                 <Label  x:Name="MonthAndYear"
                         Text="MMMM/yyyy" Margin="20, 0" TextColor="#cdcdcd" />
                 <Button Text="▲" BackgroundColor="#1f1f1f" TextColor="#cdcdcd"
@@ -47,7 +37,7 @@
             <!--===========================  WEEK DAYS  ==================================
              ========================================================================== -->
             
-            <Grid Grid.Row="1" Margin="0, -10, 0, 125" Padding="20, 0" >
+            <Grid Margin="0, -10, 0, 125" Padding="20, 0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -85,9 +75,10 @@
                            Margin="15, 0, 0, 0"/>
             </Grid>
 
-            <ScrollView x:Name="ScrollBar"
-                        Grid.Row="2" Margin="0, -130, 0, 80"
-                        Orientation="Vertical" VerticalScrollBarVisibility="Never" >
+            <ScrollView x:Name="ScrollBar" 
+                        Margin="0, -130, 0, 80"
+                        Orientation="Vertical" VerticalScrollBarVisibility="Never" 
+                        AbsoluteLayout.LayoutBounds="0, 0.8, 380, 100" AbsoluteLayout.LayoutFlags="PositionProportional">
                 <Grid Padding="20, 5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -250,21 +241,21 @@
                                 TextColor="White" BackgroundColor="#1f1f1f" />
                     <Button x:Name="d52" Text="dd" Grid.Column="2" Grid.Row="5" Padding="0"
                                 HeightRequest="25" 
-                                TextColor="White" BackgroundColor="#1f1f1f" />
+                                TextColor="#727272" BackgroundColor="#1f1f1f" />
                     <Button x:Name="d53" Text="dd" Grid.Column="3" Grid.Row="5" Padding="0"
                                 HeightRequest="25" 
-                                TextColor="White" BackgroundColor="#1f1f1f" />
+                                TextColor="#727272" BackgroundColor="#1f1f1f" />
                     <Button x:Name="d54" Text="dd" Grid.Column="4" Grid.Row="5" Padding="0"
                                 HeightRequest="25" 
-                                TextColor="White" BackgroundColor="#1f1f1f" />
+                                TextColor="#727272" BackgroundColor="#1f1f1f" />
                     <Button x:Name="d55" Text="dd" Grid.Column="5" Grid.Row="5" Padding="0"
                                 HeightRequest="25" 
-                                TextColor="White" BackgroundColor="#1f1f1f" />
+                                TextColor="#727272" BackgroundColor="#1f1f1f" />
                     <Button x:Name="d56" Text="dd" Grid.Column="6" Grid.Row="5" Padding="0"
                                 HeightRequest="25" 
-                                TextColor="White" BackgroundColor="#1f1f1f" />
+                                TextColor="#727272" BackgroundColor="#1f1f1f" />
                 </Grid>
             </ScrollView>
-        </Grid>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
