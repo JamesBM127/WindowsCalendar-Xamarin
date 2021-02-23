@@ -41,5 +41,26 @@ namespace XamarinCalendar.Entities
             return 0;
         }
 
+        static public string DaysInPortuguese(string inglishDay)
+        {
+            switch (inglishDay)
+            {
+                case "Sunday": return "domingo";
+
+                case "Monday": return "segunda-feira";
+
+                case "Tuesday": return "terça-feira";
+
+                case "Wednesday": return "quarta-feira";
+
+                case "Thursday": return "quinta-feira";
+
+                case "Friday": return "sexta-feira";
+
+                case "Saturday": return "sábado";
+            }
+            return "Hoje não!";
+        }
+
     }
 }

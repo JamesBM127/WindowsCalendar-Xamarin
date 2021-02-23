@@ -15,6 +15,7 @@ namespace XamarinCalendar
         public DateTime Date { get; set; }
         Date date;
 
+        //All days texts in SetText()
         private void SetText(int day, int month, int year)
         {
             //Date date = new Date(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
@@ -225,7 +226,7 @@ namespace XamarinCalendar
                 this.Date = DateTime.Now;
 
                 Hour.Text = Date.ToString("HH:mm:ss");
-                DayOfTheWeek.Text = Date.DayOfWeek + ", " + Date.ToString("dd") + " de " + Date.ToString("MMMM") + " de " + Date.ToString("yyyy");
+                DayOfTheWeek.Text = CalendarInterface.DaysInPortuguese(Date.DayOfWeek.ToString()) + ", " + Date.ToString("dd") + " de " + Date.ToString("MMMM") + " de " + Date.ToString("yyyy");
 
                 return true;
             });
