@@ -10,26 +10,27 @@
                     <Label x:Name="Hour"
                            Text="hh:mm:ss" TextColor="White"
                            Margin="20, 20, 20, -5"
-                           FontSize="40"/>
-                    <Label x:Name="DayOfTheWeek"
+                           FontSize="50"/>
+                    <Label x:Name="DayOfTheWeek" FontSize="17"
                            Text="Day of the Week, dd/MMMM/yyyy" TextColor="#6b6b6b"
-                           Margin="20, -5, 20, 5"/>
-                    <BoxView HeightRequest="1" WidthRequest="1" Color="#4c4c4c" HorizontalOptions="FillAndExpand"/>
+                           Margin="20, 5, 20, 2"/>
+                    <BoxView HeightRequest="1" WidthRequest="385" Color="#4c4c4c" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </Frame>
 
-            <StackLayout Orientation="Horizontal" Margin="0, 105, 0, 0" >
-                <Label  x:Name="MonthAndYear"
+            <StackLayout Orientation="Horizontal" Margin="0, 130, 0, 0"
+                         WidthRequest="385">
+                <Label  x:Name="MonthAndYear" FontSize="17" HorizontalTextAlignment="Start"
                         Text="MMMM/yyyy" Margin="20, 0" TextColor="#cdcdcd" />
                 <Button Text="▲" BackgroundColor="#1f1f1f" TextColor="#cdcdcd"
-                        HeightRequest="20" WidthRequest="20" Padding="0"
-                        HorizontalOptions="EndAndExpand" VerticalOptions="Start"
-                        Margin="0, 0, 25, 0"
+                        HeightRequest="30" WidthRequest="30" Padding="0"
+                        HorizontalOptions="EndAndExpand" VerticalOptions="End"
+                        Margin="0, 0, 15, 0"
                         Clicked="Btn_GoToLastMonth"/>
                 <Button Text="▼" BackgroundColor="#1f1f1f" TextColor="#cdcdcd"
-                        HeightRequest="20" WidthRequest="20" Padding="0"
+                        HeightRequest="30" WidthRequest="30" Padding="0"
                         VerticalOptions="Start"
-                        Margin="0, 0, 35, 0"
+                        Margin="0, 0, 30, 0"
                         Clicked="Btn_GoToNextMonth"/>
             </StackLayout>
 
@@ -37,7 +38,9 @@
             <!--===========================  WEEK DAYS  ==================================
              ========================================================================== -->
             
-            <Grid Margin="0, -10, 0, 125" Padding="20, 0" >
+            <Grid Margin="0, -10, 0, 50" Padding="20, 0"
+                  AbsoluteLayout.LayoutBounds="0, 0.6, 385, 280"
+                  AbsoluteLayout.LayoutFlags="PositionProportional">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -76,9 +79,9 @@
             </Grid>
 
             <ScrollView x:Name="ScrollBar" 
-                        Margin="0, -130, 0, 80"
+                        Margin="0, -20, 0, -20"
                         Orientation="Vertical" VerticalScrollBarVisibility="Never" 
-                        AbsoluteLayout.LayoutBounds="0, 0.8, 380, 100" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        AbsoluteLayout.LayoutBounds="0.5, 0.8, 380, 300" AbsoluteLayout.LayoutFlags="PositionProportional">
                 <Grid Padding="20, 5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
